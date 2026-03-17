@@ -1,9 +1,11 @@
 #include "ReservationSystem.hpp"
 
 
-ReservationSystem::ReservationSystem(int room_c, int* room_capa) : room_count(room_c){
-    room_capacities = room_capa;
-    horarios = new list_reserved[room_count];
+ReservationSystem::ReservationSystem(int room_count, int* room_capacities) : 
+    room_count(room_count),
+    room_capacities(room_capacities)
+    {
+    horarios = new list_reserved[room_count][5];
 }
 
 ReservationSystem::~ReservationSystem(){
@@ -11,7 +13,16 @@ ReservationSystem::~ReservationSystem(){
 }
 
 bool ReservationSystem::reserve(ReservationRequest request){
-    return true;
+    int day = map_weekday(request.getWeekday());
+    bool accepted = false;
+    
+    for (int i = 0; i < room_count; i++){
+        accepted = horarios[i][day].try_reserve(request);
+
+        if (accepted)
+            break;
+    }
+    return accepted;
 }
 
 

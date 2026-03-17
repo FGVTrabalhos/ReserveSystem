@@ -1,4 +1,6 @@
+#include "ReservationRequest.hpp"
 #include <string>
+
 
 
 struct reserved{
@@ -7,7 +9,7 @@ struct reserved{
     int end;
 
     bool operator<(const reserved& other);
-    bool operator==(const std::string name);
+    bool operator==(const std::string& course);
 
     void print_reserve();
 };
@@ -28,6 +30,6 @@ class list_reserved{
     public:
 
         void print_reserves();
-        bool try_reserve();
-        bool try_cancel();
+        bool try_reserve(ReservationRequest& request);
+        bool try_cancel(std::string name);
 };

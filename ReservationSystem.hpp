@@ -23,7 +23,7 @@ class ReservationSystem {
         int room_count;
         int* room_capacities;
 
-        list_reserved** horarios; // ponteiro para cada sala e então para cada dia da semana
+        list_reserved (*horarios)[5]; // ponteiro para cada sala e então para cada dia da semana
         // Estruturas internas escolhidas pelos alunos
         // para armazenar e gerenciar as reservas, os horários, ...
 
