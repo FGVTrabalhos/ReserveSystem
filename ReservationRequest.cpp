@@ -6,35 +6,37 @@ ReservationRequest::ReservationRequest(
                                         int start_hour,
                                         int end_hour,
                                         int student_count
-    ){
+    ):  course_name(course_name),
+        weekday(weekday),
+        start_hour(start_hour),
+        end_hour(end_hour),
+        student_count(student_count)
+{}
 
-}
 
+ReservationRequest::~ReservationRequest(){}
 
-ReservationRequest::~ReservationRequest(){
-
-}
 
 int ReservationRequest::getStartHour(){
-    return 0;
+    return start_hour;
 }
 
 
 int ReservationRequest::getEndHour(){
-    return 0;
+    return end_hour;
 }
 
 
 std::string ReservationRequest::getCourseName(){
-    return "";
+    return course_name;
 }
 
 
 std::string ReservationRequest::getWeekday(){
-    return "";
+    return weekday;
 }
 
 
 int ReservationRequest::getStudentCount(){
-    return 0;
+    return student_count;
 }
