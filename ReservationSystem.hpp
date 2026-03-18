@@ -1,21 +1,10 @@
+#pragma once
 #include "ReservationRequest.hpp"
 #include "list.hpp"
 
 
-int map_weekday(std::string weekday){
-    if (weekday == "segunda")
-        return 1;
-    if (weekday == "terca")
-        return 2;
-    if (weekday == "quarta")
-        return 3;
-    if (weekday == "quinta")
-        return 4;
-    if (weekday == "sexta")
-        return 5;
-        
-    return 0;
-}
+int map_weekday(std::string weekday);
+std::string map_int(int day);
 
 
 class ReservationSystem {

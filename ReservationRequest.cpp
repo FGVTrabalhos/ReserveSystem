@@ -14,9 +14,6 @@ ReservationRequest::ReservationRequest(
 {}
 
 
-ReservationRequest::~ReservationRequest(){}
-
-
 int ReservationRequest::getStartHour(){
     return start_hour;
 }
