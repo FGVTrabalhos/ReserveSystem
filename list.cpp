@@ -21,6 +21,11 @@ bool reserved::operator<(const reserved& other){
     return end < other.end;
 }
 
+
+void reserved::print_reserve(){
+    std::cout << start << "~" << end << ": " << course_name << std::endl;
+}
+
 // ============================================================================
 // Lista
 
