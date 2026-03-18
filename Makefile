@@ -1,6 +1,6 @@
 CXXFLAGS = 
 
-prog: ReservationSystem.o ReservationRequest.o list.o
+main: ReservationSystem.o ReservationRequest.o list.o
 	g++ $(CXXFLAGS) main.cpp -o prog ReservationSystem.o ReservationRequest.o list.o
 
 ReservationSystem.o: ReservationSystem.cpp ReservationSystem.hpp ReservationRequest.hpp list.hpp
