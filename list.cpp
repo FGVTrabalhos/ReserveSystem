@@ -85,8 +85,7 @@ bool list_reserved::try_reserve_aux(reserved &request, list_reserved::node **nex
     if (*next == nullptr)
         return false;
 
-    if ((*next)->data < request)
-        return true;
+    // falta implementar isso
 
     return try_reserve_aux(request, &((*next)->next));
 }
