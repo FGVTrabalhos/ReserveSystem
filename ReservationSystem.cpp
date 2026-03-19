@@ -48,6 +48,8 @@ ReservationSystem::~ReservationSystem(){
 bool ReservationSystem::reserve(ReservationRequest request){
     int day = map_weekday(request.getWeekday()) - 1;
     bool accepted = false;
+    
+    std::cout << request.getCourseName() << std::endl;
 
     for (int i = 0; i < room_count; i++){
         accepted = horarios[i][day].try_reserve(request);
@@ -78,13 +80,16 @@ bool ReservationSystem::cancel(std::string course_name){
 
 void ReservationSystem::printSchedule(){
     for (int i = 0; i < room_count; i++){
-        std::cout <<  "Sala" << i + 1 << std::endl;
-        
-        for (int day = 0; day < 5; day++){
-            if (horarios[i][day].get_size() > 0){
-                std::cout << map_int(day + 1) << std::endl;
-                horarios[i][day].print_reserves();
+        if (true){
+            std::cout <<  "Sala" << i + 1 << std::endl;
+            
+            for (int day = 0; day < 5; day++){
+                if (horarios[i][day].get_size() > 0){
+                    std::cout << map_int(day + 1) << std::endl;
+                    horarios[i][day].print_reserves();
+                }
             }
+            std::cout << std::endl;
         }
     }
 }

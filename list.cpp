@@ -87,7 +87,7 @@ void list_reserved::print_reserves_aux(list_reserved::node* next){
 bool list_reserved::try_reserve_aux(reserved &request, list_reserved::node **next){
     if (*next == nullptr){
         insert(request, next);
-        return false;
+        return true;
     }
 
     if ((*next)->data < request){
@@ -128,7 +128,7 @@ void list_reserved::print_reserves(){
 }
 
 bool list_reserved::try_reserve(ReservationRequest &request){
-    reserved n(request); 
+    reserved n(request);
     return try_reserve_aux(n, &head);
 }
 

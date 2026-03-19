@@ -6,8 +6,11 @@ int main (void){
     ReservationSystem sistema(4, capacities);
 
     ReservationRequest requisite("calculus", "segunda", 9, 11, 30);
+    sistema.reserve(requisite);
 
-    std::cout << sistema.reserve(requisite) << std::endl;
+    
+    ReservationRequest outrarequisite("analisis", "segunda", 11, 12, 30);
+    sistema.reserve(outrarequisite);
 
     sistema.printSchedule();
     return 0;
