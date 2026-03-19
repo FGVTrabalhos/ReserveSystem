@@ -57,6 +57,7 @@ void list_reserved::insert(reserved v, list_reserved::node **next){
     novo->next = *next;
 
     *next = novo;
+    size++;
 }
 
 
@@ -67,6 +68,8 @@ void list_reserved::remove(list_reserved::node **next){
         *next = tmp->next;
         delete tmp;
     }
+
+    size--;
 }
 
 
@@ -82,10 +85,23 @@ void list_reserved::print_reserves_aux(list_reserved::node* next){
 }
 
 bool list_reserved::try_reserve_aux(reserved &request, list_reserved::node **next){
-    if (*next == nullptr)
+    if (*next == nullptr){
+        insert(request, next);
         return false;
+    }
 
-    // falta implementar isso
+    if ((*next)->data < request){
+        if ((*next)->next == nullptr){
+            insert(request, next);
+            return true;
+        }
+        if (request < (*next)->next->data){
+            insert(request, next);
+            return true;
+        }
+
+        return false;
+    }
 
     return try_reserve_aux(request, &((*next)->next));
 }
@@ -118,4 +134,8 @@ bool list_reserved::try_reserve(ReservationRequest &request){
 
 bool list_reserved::try_cancel(std::string& s){
     return try_cancel_aux(s, &head);
+}
+
+int list_reserved::get_size(){
+    return size;
 }

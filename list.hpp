@@ -44,4 +44,5 @@ class list_reserved{
         void print_reserves();
         bool try_reserve(ReservationRequest& request);
         bool try_cancel(std::string& name);
+        int get_size();
 };
