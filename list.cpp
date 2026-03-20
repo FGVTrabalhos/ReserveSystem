@@ -18,7 +18,7 @@ bool reserved::operator==(const std::string& s){
 
 
 bool reserved::operator<(const reserved& other){
-    return end < other.end;
+    return end < other.start;
 }
 
 

@@ -46,6 +46,11 @@ ReservationSystem::~ReservationSystem(){
 }
 
 bool ReservationSystem::reserve(ReservationRequest request){
+    if (! validar_request(request))
+        return false;
+
+
+
     int day = map_weekday(request.getWeekday()) - 1;
     bool accepted = false;
     

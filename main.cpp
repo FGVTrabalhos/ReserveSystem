@@ -9,7 +9,7 @@ int main (void){
     sistema.reserve(requisite);
 
     
-    ReservationRequest outrarequisite("analisis", "segunda", 11, 12, 30);
+    ReservationRequest outrarequisite("analisis", "segunda", 7, 8, 30);
     sistema.reserve(outrarequisite);
 
     sistema.printSchedule();

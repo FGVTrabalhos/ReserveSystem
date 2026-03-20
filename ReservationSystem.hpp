@@ -26,6 +26,5 @@ class ReservationSystem {
 
         void printSchedule();
 
-        // Outros métodos utilitários necessários
-        // para auxiliar nas funções requisitadas
+        bool validar_request(ReservationRequest& request);
 };
