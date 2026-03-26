@@ -1,22 +1,26 @@
 #include "ReservationSystem.hpp"
 
 
+#define SALAS 5
+
 int main (void){
-    int capacities[2] = {30, 40};
-    ReservationSystem sistema(2, capacities);
+    int capacities[SALAS] = {30, 100};
+    ReservationSystem sistema(SALAS, capacities);
 
-    ReservationRequest requisite("calculus", "segunda", 9, 11, 40);
-    sistema.reserve(requisite);
+    ReservationRequest calculus("vetorial calculus", "segunda", 9, 11, 20);
+    sistema.reserve(calculus);
 
-    
-    ReservationRequest outrarequisite("analisis", "segunda", 7, 9, 30);
-    sistema.reserve(outrarequisite);
+    ReservationRequest datastructures("data structures", "segunda", 7, 9, 65);
+    sistema.reserve(datastructures);
 
-    ReservationRequest outrarequisite1("Algebra", "segunda", 7, 8, 30);
-    sistema.reserve(outrarequisite1);
+    ReservationRequest algebra("Numerical Linear Algebra", "terca", 11, 13, 65);
+    sistema.reserve(algebra);
 
-    ReservationRequest outrarequisite2("Lp", "segunda", 7, 8, 30);
-    sistema.reserve(outrarequisite1);
+    ReservationRequest probability("Theory of probability", "segunda", 11, 13, 65);
+    sistema.reserve(probability);
+
+    ReservationRequest diferencialequations("Ordinary Diferencial Equations", "terca", 9, 11, 20);
+    sistema.reserve(diferencialequations);
 
     sistema.printSchedule();
     return 0;

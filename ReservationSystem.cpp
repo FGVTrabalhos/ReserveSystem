@@ -100,9 +100,18 @@ bool ReservationSystem::cancel(std::string course_name){
 // ============================================================================
 
 
+bool check_room(list_reserved* days){
+    for (int i = 0; i < 5; i++)
+        if (days[i].get_size() > 0)
+            return true;
+
+    return false;
+}
+
+
 void ReservationSystem::printSchedule(){
     for (int i = 0; i < room_count; i++){
-        if (true){
+        if (check_room(horarios[i])){
             std::cout <<  "Sala" << i + 1 << std::endl;
             
             for (int day = 0; day < 5; day++){
