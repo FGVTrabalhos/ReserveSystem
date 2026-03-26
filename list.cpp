@@ -1,6 +1,5 @@
 #include "list.hpp"
 
-
 // ============================================================================
 // Reserved
 
@@ -11,6 +10,7 @@ reserved::reserved(ReservationRequest& request):
     start(request.getStartHour()),
     end(request.getEndHour())
     {}
+
 
 bool reserved::operator==(const std::string& s){
     return course_name == s;
@@ -25,6 +25,7 @@ bool reserved::operator<=(const reserved& other){
 void reserved::print_reserve(){
     std::cout << start << "~" << end << ": " << course_name << std::endl;
 }
+
 
 // ============================================================================
 // Lista
@@ -123,14 +124,17 @@ void list_reserved::print_reserves(){
     print_reserves_aux(head);
 }
 
+
 bool list_reserved::try_reserve(ReservationRequest &request){
     reserved n(request);
     return try_reserve_aux(n, &head);
 }
 
+
 bool list_reserved::try_cancel(std::string& s){
     return try_cancel_aux(s, &head);
 }
+
 
 int list_reserved::get_size(){
     return size;

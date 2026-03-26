@@ -1,5 +1,9 @@
 #include "ReservationSystem.hpp"
 
+
+// ============================================================================
+
+
 int map_weekday(std::string weekday){
     if (weekday == "segunda")
         return 1;
@@ -34,6 +38,9 @@ std::string map_int(int day){
 }
 
 
+// ============================================================================
+
+
 ReservationSystem::ReservationSystem(int room_count, int* room_capacities) : 
     room_count(room_count),
     room_capacities(room_capacities)
@@ -45,23 +52,34 @@ ReservationSystem::~ReservationSystem(){
     delete[] horarios;
 }
 
+
+// ============================================================================
+
+
 bool ReservationSystem::reserve(ReservationRequest request){
-    if (! validar_request(request))
+    if (!validar_request(request))
         return false;
 
 
 
     int day = map_weekday(request.getWeekday()) - 1;
+    int qtt_alunos = request.getStudentCount();
     bool accepted = false;
     
     for (int i = 0; i < room_count; i++){
+        if (room_capacities[i] < qtt_alunos)
+            continue;
+
         accepted = horarios[i][day].try_reserve(request);
 
         if (accepted)
-            break;
+            return true;
     }
-    return accepted;
+    return false;
 }
+
+
+// ============================================================================
 
 
 bool ReservationSystem::cancel(std::string course_name){
@@ -72,14 +90,15 @@ bool ReservationSystem::cancel(std::string course_name){
             canceled = horarios[i][day].try_cancel(course_name);
 
             if(canceled)
-                break;
+                return true;
         }
-
-        if (canceled)
-            break;
     }
-    return canceled;
+    return false;
 }
+
+
+// ============================================================================
+
 
 void ReservationSystem::printSchedule(){
     for (int i = 0; i < room_count; i++){
@@ -96,6 +115,9 @@ void ReservationSystem::printSchedule(){
         }
     }
 }
+
+
+// ============================================================================
 
 
 bool ReservationSystem::validar_request(ReservationRequest& request){
