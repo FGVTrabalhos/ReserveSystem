@@ -54,8 +54,6 @@ bool ReservationSystem::reserve(ReservationRequest request){
     int day = map_weekday(request.getWeekday()) - 1;
     bool accepted = false;
     
-    std::cout << request.getCourseName() << std::endl;
-
     for (int i = 0; i < room_count; i++){
         accepted = horarios[i][day].try_reserve(request);
 
