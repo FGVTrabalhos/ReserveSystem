@@ -13,7 +13,7 @@ struct reserved{
 
     reserved(ReservationRequest&);
 
-    bool operator<(const reserved& other);
+    bool operator<=(const reserved& other);
     bool operator==(const std::string& course);
 
     void print_reserve();

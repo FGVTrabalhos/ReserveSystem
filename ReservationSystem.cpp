@@ -98,3 +98,8 @@ void ReservationSystem::printSchedule(){
         }
     }
 }
+
+
+bool ReservationSystem::validar_request(ReservationRequest& request){
+    return true;
+}

@@ -17,8 +17,8 @@ bool reserved::operator==(const std::string& s){
 }
 
 
-bool reserved::operator<(const reserved& other){
-    return end < other.start;
+bool reserved::operator<=(const reserved& other){
+    return end <= other.start;
 }
 
 
@@ -89,21 +89,17 @@ bool list_reserved::try_reserve_aux(reserved &request, list_reserved::node **nex
         insert(request, next);
         return true;
     }
-
-    if ((*next)->data < request){
-        if ((*next)->next == nullptr){
-            insert(request, next);
-            return true;
-        }
-        if (request < (*next)->next->data){
-            insert(request, next);
-            return true;
-        }
-
-        return false;
+    
+    if (request <= (*next)->data){
+        insert(request, next);
+        return true;
     }
 
-    return try_reserve_aux(request, &((*next)->next));
+    if ((*next)->data <= request){
+        try_reserve_aux(request, &((*next)->next));
+    }
+
+    return false;
 }
 
 
