@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-struct reserved{
+struct reserved{ 
     std::string course_name;
     int start;
     int end;

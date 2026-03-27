@@ -3,7 +3,7 @@
 // ============================================================================
 // Reserved
 
-reserved::reserved(): course_name(""), start(0), end(21) {}
+reserved::reserved(): course_name(""), start(7), end(21) {}
 
 reserved::reserved(ReservationRequest& request): 
     course_name(request.getCourseName()),

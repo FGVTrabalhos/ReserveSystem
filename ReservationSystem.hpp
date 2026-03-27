@@ -4,7 +4,8 @@
 
 
 int map_weekday(std::string weekday);
-std::string map_int(int day);
+std::string map_int(int day); // Map para mapear os dias da semana
+                              // Preferível map à hash table pois map possui ordenação como propriedade
 
 
 class ReservationSystem {
