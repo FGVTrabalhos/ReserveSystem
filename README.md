@@ -74,4 +74,5 @@ Na **ReservationSystem** optamos por modelar as reservas através de:
 
 ## Autores ##
 **Leonidas Caetano da Silva**, conhecido populamente como *Fernandinho*
+
 **Luiz Antônio Alves de Lima**, conhecido como colega de quarto do *Fernandinho*
