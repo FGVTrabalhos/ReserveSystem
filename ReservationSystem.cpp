@@ -130,5 +130,9 @@ void ReservationSystem::printSchedule(){
 
 
 bool ReservationSystem::validar_request(ReservationRequest& request){
-    return true;
+    bool b1 = (7 <= request.getStartHour()) &&
+              (request.getStartHour() < request.getEndHour()) &&
+              (request.getEndHour() <= 21);
+    
+    return b1;
 }
