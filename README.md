@@ -31,7 +31,7 @@ Para executar:
 
 ```shell ./reservation_system```
 
-## Saida esperada##
+## Saida esperada ##
 
 ```shell
 ===================================================================================================
