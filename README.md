@@ -22,17 +22,21 @@ Ao fazer isso o sistema:
     Declaração das Estruturas de Dados usadas para efetuar as reservas
  - ReservationSystem
  
-    Classe *ReservationSystem*, que contém a lógica da reserva.
+    Classe *ReservationSystem*, que gerencia as reservas do sistema.
 
 ## Instruções de compilação e execução ##
 
 Para compilar o projeto:
 
-```shell make```
+```shell 
+make
+```
 
 Para executar:
 
-```shell ./reservation_system```
+```shell 
+./reservation_system
+```
 
 ## Saida esperada ##
 
