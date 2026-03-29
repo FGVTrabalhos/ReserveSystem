@@ -12,7 +12,6 @@ Ao fazer isso o sistema:
  - Se não houver conflito registra a reserva (*aprovada*)
  - Se houver conflito ou se a reserva for inválida, o pedido de reserva não é atendido (*rejeitada*)
 
-
 ## Organização do Código ##
  - ReservationRequest
 
@@ -98,6 +97,7 @@ Na **ReservationSystem** optamos por modelar as reservas através de:
  - Inserção ordenada para simplificar a verificação de possíveis conflitos
  - Uso de lista encadeada para facilitar inserções dinâmicas
 
+Maiores informações se encontram no arquivo ```RelatorioED1.pdf```
 
 ## Autores ##
 **Leonidas Caetano da Silva** e **Luiz Antônio Alves de Lima**.
