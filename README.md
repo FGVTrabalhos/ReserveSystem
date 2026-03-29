@@ -21,7 +21,7 @@ Ao fazer isso o sistema:
  - ReservationSystem
     Classe *ReservationSystem*, que contém a lógica da reserva.
 
-## Instruções de compilação e execução##
+## Instruções de compilação e execução ##
 
 Para compilar o projeto:
 
@@ -36,6 +36,7 @@ Para executar:
 ```shell
 ===================================================================================================
 Iniciando teste de inserir reservas com sucesso
+Horarios: 
 Sala1
 segunda
 9~11: Vetorial Calculus
@@ -53,9 +54,11 @@ Reservas canceladas
 Teste encerrado
 ===================================================================================================
 Iniciando teste de pedido de reserva que ultrapassa a capacidade de alunos
+Horarios: 
 Teste encerrado
 ===================================================================================================
 Iniciando teste de overbooking
+Horarios: 
 Sala1
 segunda
 7~9: English Class - Book 2
@@ -73,11 +76,13 @@ Teste encerrado
 ===================================================================================================
 Iniciando teste de cancelamento de uma reserva
 Reserva feita
+Horarios: 
 Sala1
 segunda
 9~11: Vetorial Calculus
 
 Reserva cancelada
+Horarios: 
 Teste encerrado
 ```
 

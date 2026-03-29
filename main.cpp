@@ -26,6 +26,7 @@ void testSuccessfulReservations(ReservationSystem& sistema) {
     ReservationRequest diferencialequations("Ordinary Diferencial Equations", "terca", 9, 11, 20);
     sistema.reserve(diferencialequations);
 
+    std::cout << "Horarios: " << std::endl;
     sistema.printSchedule();
     sistema.cancel("Vetorial Calculus");
     sistema.cancel("Data Structures");
@@ -44,6 +45,7 @@ void testRoomCapacityLimit(ReservationSystem& sistema) {
     // Tentativa de reserva extrapolando o limite da sala
     ReservationRequest lecture("Lecture with Cesár Camacho", "sexta", 14, 16, 250);
     sistema.reserve(lecture);
+    std::cout << "Horarios: " << std::endl;
     sistema.printSchedule();
 
     std::cout << "Teste encerrado" << std::endl;
@@ -67,6 +69,7 @@ void testOverbooking(ReservationSystem& sistema) {
     ReservationRequest englishclass10("English Class - Book 10", "segunda", 7, 9, 30);
     sistema.reserve(englishclass10);
 
+    std::cout << "Horarios: " << std::endl;
     sistema.printSchedule();
     sistema.cancel("English Class - Book 2");
     sistema.cancel("English Class - Book 7");
@@ -85,11 +88,13 @@ void testCancellation(ReservationSystem& sistema) {
 
     sistema.reserve(calculus);
     std::cout << "Reserva feita" << std::endl;
+    std::cout << "Horarios: " << std::endl;
     sistema.printSchedule();
 
     sistema.cancel("Vetorial Calculus");
     std::cout << "Reserva cancelada" << std::endl;
 
+    std::cout << "Horarios: " << std::endl;
     sistema.printSchedule();
     std::cout << "Teste encerrado" << std::endl;
 };
