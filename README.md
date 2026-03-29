@@ -31,6 +31,56 @@ Para executar:
 
 ```shell ./reservation_system```
 
+## Saida esperada##
+
+```shell
+===================================================================================================
+Iniciando teste de inserir reservas com sucesso
+Sala1
+segunda
+9~11: Vetorial Calculus
+terca
+9~11: Ordinary Diferencial Equations
+
+Sala3
+segunda
+7~9: Data Structures
+11~13: Theory of probability
+terca
+11~13: Numerical Linear Algebra
+
+Reservas canceladas
+Teste encerrado
+===================================================================================================
+Iniciando teste de pedido de reserva que ultrapassa a capacidade de alunos
+Teste encerrado
+===================================================================================================
+Iniciando teste de overbooking
+Sala1
+segunda
+7~9: English Class - Book 2
+
+Sala2
+segunda
+7~9: English Class - Book 7
+
+Sala3
+segunda
+7~9: English Class - Book 9
+
+Reservas canceladas
+Teste encerrado
+===================================================================================================
+Iniciando teste de cancelamento de uma reserva
+Reserva feita
+Sala1
+segunda
+9~11: Vetorial Calculus
+
+Reserva cancelada
+Teste encerrado
+```
+
 ## Decisões do Projeto ##
 Na **ReservationSystem** optamos por modelar as reservas através de:
  - Inserção ordenada para simplificar a verificação de possíveis conflitos
