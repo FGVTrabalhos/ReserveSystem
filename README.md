@@ -15,10 +15,13 @@ Ao fazer isso o sistema:
 
 ## Organização do Código ##
  - ReservationRequest
+
     Classe *ReservationRequest* que formaliza uma reserva.
  - list
+
     Declaração das Estruturas de Dados usadas para efetuar as reservas
  - ReservationSystem
+ 
     Classe *ReservationSystem*, que contém a lógica da reserva.
 
 ## Instruções de compilação e execução ##
